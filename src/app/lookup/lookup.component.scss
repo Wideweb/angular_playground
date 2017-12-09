@@ -1,0 +1,16 @@
+.search-addon {
+    border-right: none;
+    background: none;
+    padding-top: 10px;
+    padding-right: 0px;
+}
+
+.search-control {
+    border-left: none;
+}
+
+input[type="text"]:focus {   
+  border-color: #ced4da;
+  box-shadow: none;
+  outline: 0 none;
+}

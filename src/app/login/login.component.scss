@@ -1,0 +1,11 @@
+.header {
+	color: white;
+}
+
+.login {
+	max-width: 650px;
+
+	@media (min-width: 768px) {
+		min-width: 550px;
+	}
+}

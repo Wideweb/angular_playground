@@ -1,0 +1,87 @@
+<div class="mx-auto col-md-6 mt-3 mt-sm-5 login">
+    <div class="card">
+        <div class="card-header bg-primary header">
+            <h3>Sign in</h3>
+        </div>
+        <div class="card-block pt-sm-3 px-md-5 px-sm-0">
+            <div class="container">
+                <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                    <div class="form-group row">
+                        <label for="firstname" class="col-md-3 col-sm-12 col-form-label required">First Name</label>
+                        <div class="col-md-9 col-sm-12" [ngClass]="{ 'invalid': isFieldValid('firstname') }">
+                            <input id="firstname" class="form-control" type="text" formControlName="firstname">
+                            <div class="validation-messages" *ngIf="form.controls.firstname.errors">
+                                <div *ngIf="form.controls.firstname.errors.required">
+                                    First name is required.
+                                </div>
+                                <div *ngIf="form.controls.firstname.errors.minlength">
+                                    should be longer than 5 symbols.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="lastname" class="col-md-3 col-sm-12 col-form-label required">Last Name</label>
+                        <div class="col-md-9 col-sm-12" [ngClass]="{ 'invalid': isFieldValid('lastname') }">
+                            <input id="lastname" class="form-control" type="text" formControlName="lastname">
+                            <div class="validation-messages" *ngIf="form.controls.lastname.errors">
+                                <div *ngIf="form.controls.lastname.errors.required">
+                                    Last Name is required.
+                                </div>
+                                <div *ngIf="form.controls.lastname.errors.minlength">
+                                    should be longer than 5 symbols.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="email" class="col-md-3 col-sm-12 col-form-label required">Email</label>
+                        <div class="col-md-9 col-sm-12" [ngClass]="{ 'invalid': isFieldValid('email') }">
+                            <input id="email" class="form-control" type="email" formControlName="email">
+                            <div class="validation-messages" *ngIf="form.controls.email.errors">
+                                <div *ngIf="form.controls.email.errors.required">
+                                    email is required.
+                                </div>
+                                <div *ngIf="form.controls.email.errors.minlength">
+                                    should be longer than 5 symbols.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="login" class="col-md-3 col-sm-12 col-form-label required">Login</label>
+                        <div class="col-md-9 col-sm-12" [ngClass]="{ 'invalid': isFieldValid('login') }">
+                            <input id="login" class="form-control" type="login" formControlName="login">
+                            <div class="validation-messages" *ngIf="form.controls.login.errors">
+                                <div *ngIf="form.controls.login.errors.required">
+                                    login is required.
+                                </div>
+                                <div *ngIf="form.controls.login.errors.minlength">
+                                    should be longer than 5 symbols.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="password" class="col-md-3 col-sm-12 col-form-label required">Password</label>
+                        <div class="col-md-9 col-sm-12" [ngClass]="{ 'invalid': isFieldValid('password') }">
+                            <input id="password" class="form-control" type="password" formControlName="password">
+                            <div class="validation-messages" *ngIf="form.controls.password.errors">
+                                <div *ngIf="form.controls.password.errors.required">
+                                    password is required.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="offset-md-3 col-md-10 offset-sm-0 col-sm-12">
+                            <button type="submit" class="btn btn-primary">Sign in</button>
+                            <button type="button" class="btn btn-default" (click)="reset()">Cancel</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

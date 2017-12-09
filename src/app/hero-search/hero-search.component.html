@@ -1,0 +1,8 @@
+<div>
+    <input #searchTerm type="text" (keyup)="search(searchTerm.value)">
+    <div *ngFor="let hero of heroes$ | async">
+        <a routerLink="/detail/{{hero.id}}">
+            {{hero.name}}
+        </a>
+    </div>
+</div>

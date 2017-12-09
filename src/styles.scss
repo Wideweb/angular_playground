@@ -1,0 +1,64 @@
+@import "./assets/scss/_variables.scss";
+@import "~bootstrap/scss/bootstrap.scss";
+@import "~@progress/kendo-theme-default/scss/all";
+@import "~ng2-toastr/bundles/ng2-toastr.min.css";
+@import "~ng-drag-drop/style.css";
+
+@import "./app/shared/shared.scss";
+
+body {
+    position: relative;
+}
+
+.dropdown-menu .dropdown-item{
+    cursor: pointer;
+}
+
+.form-group {
+    .validation-messages {
+        display: none;
+        color: $error-color;
+    }
+    .invalid {
+        input {
+            border: 1px solid $error-color;
+        }
+        .validation-messages {
+            display: block;
+        }
+    }
+    .col-form-label.required:after { 
+        color: $error-color;
+        content: "*";
+        position: absolute;
+        margin-left: 5px;
+        top: 7px;
+    }
+}
+
+.app-modal {
+    .header {
+        color: white;
+    }
+    
+    .header-close-button {
+        color: white;
+    }
+    
+    .modal-header, .modal-footer {
+        border-radius: 0px;
+    }
+    
+    .modal-content {
+        border-radius: 0px;
+    }
+}
+
+#toast-container>div.toast.toast-custom {
+    padding: 0px;
+    width: 400px;
+
+    .toast-close-button {
+        margin: 15px;
+    }
+}

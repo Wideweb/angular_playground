@@ -1,0 +1,25 @@
+kendo-grid .grid-column-header {
+    background-color: #343a40;
+    color: white;
+    font-weight: 500;
+    padding: 15px;
+    font-size: 17px;
+}
+
+@mixin sort-arrow() {
+    color: white;
+    font-size: 13px;
+    position: relative;
+    top: 1px;
+    font-family: FontAwesome;
+}
+
+kendo-grid .k-i-sort-asc-sm::before {
+    @include sort-arrow();
+    content: "\F077";
+}
+
+kendo-grid .k-i-sort-desc-sm::before {
+    @include sort-arrow();
+    content: "\F078";
+}

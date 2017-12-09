@@ -1,0 +1,12 @@
+<form [formGroup]="form" class="search-form" (ngSubmit)="onSubmit()">
+    <div class="input-group">
+        <div class="input-group-btn" ngbDropdown >
+            <button type="button" class="btn btn-primary" id="lookup-option" ngbDropdownToggle>{{ selectedOption.name }}</button>
+            <div class="dropdown-menu" ngbDropdownMenu aria-labelledby="lookup-option">
+                <a *ngFor="let option of options" class="dropdown-item" (click)="selectOption(option)">{{ option.name }}</a>
+            </div>
+        </div>
+        <i class="fa fa-search search-addon input-group-addon" aria-hidden="true"></i>
+        <input formControlName="lookupTerm" type="text" class="form-control search-control" placeholder="Search">
+    </div>
+</form>

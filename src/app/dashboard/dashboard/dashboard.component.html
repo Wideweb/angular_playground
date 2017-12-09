@@ -1,0 +1,33 @@
+<div class="dashboard container-fluid">
+
+    <div class="row">
+        <ul class="nav dashboard-navigation">
+            <li class="nav-item">
+                <a class="nav-link" (click)="settingsCollapsed = !settingsCollapsed">Settings</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#">Disabled</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="row mt-3">
+
+        <div class="col-4" *ngIf="settingsCollapsed">
+            <div class="row">
+                <app-dashboard-settings-bar class="w-100" [columns]="defaultGridSettings.columns" [selectedColumns]="gridSettings.columns" (columnSelected)="onColumnSelected($event)"
+                    (columnRemoved)="onColumnRemoved($event)"></app-dashboard-settings-bar>
+            </div>
+        </div>
+
+        <div class="col">
+            <app-grid [gridSettings]="gridSettings" [gridData$]="gridData$"></app-grid>
+        </div>
+    </div>
+</div>

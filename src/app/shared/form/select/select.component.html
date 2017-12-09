@@ -1,0 +1,8 @@
+<div>
+    <input type="text" #searchTerms (keyup)="search(searchTerms.value)" [(ngModel)]="searchText" (click)="touch()">
+    <div *ngIf="searchResultShown">
+        <div *ngFor="let item of items$ | async" (click)="selectItem(item)">
+            {{ item.name }}
+        </div>
+    </div>
+</div>

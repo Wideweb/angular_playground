@@ -1,0 +1,39 @@
+/*.table-wrapper { 
+    overflow-x:scroll;
+    overflow-y:visible;
+}
+
+table {
+    margin-left: 398px;
+}
+
+td, th {
+    padding: 5px 20px;
+    width: 400px;
+}
+
+tr:hover td, tr:hover th, tr.selected td, tr.selected th {
+   background-color: yellow;
+}
+
+td, th {
+    background: white;
+    border: 2px solid black;
+}
+
+th:first-child, td:first-child {
+    margin-top: -1px;
+    left: 0px;
+    position: absolute;
+    z-index: 100;
+    display: none;
+}
+
+.dashboard {
+    position: relative;
+}*/
+
+.dashboard-navigation {
+    background: #CCC;
+    width: 100%;
+}

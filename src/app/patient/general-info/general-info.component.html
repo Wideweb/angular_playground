@@ -1,0 +1,94 @@
+<div class="general-information">
+    <div class="card">
+        <div class="card-header bg-primary header">
+            <h3>General Information</h3>
+        </div>
+        <div class="card-block pt-sm-3 px-sm-3">
+            <div class="container" [formGroup]="form">
+                <div class="row">
+                    <div class="form-column col-sm-6">
+                        <div class="form-group row">
+                            <label for="firstName" class="col-md-3 col-sm-12 col-form-label required">First Name</label>
+                            <div class="col-md-9 col-sm-12" [ngClass]="{ 'invalid': isFieldValid('firstName') }">
+                                <input id="firstName" class="form-control" type="text" formControlName="firstName" currencyFormatter>
+                                <div class="validation-messages" *ngIf="form.controls.firstName.errors">
+                                    <div *ngIf="form.controls.firstName.errors.required">
+                                        first name is required.
+                                    </div>
+                                    <div *ngIf="form.controls.firstName.errors.minlength">
+                                        should be longer than 5 symbols.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="email" class="col-md-3 col-sm-12 col-form-label required">Email</label>
+                            <div class="col-md-9 col-sm-12" [ngClass]="{ 'invalid': isFieldValid('email') }">
+                                <input id="email" class="form-control" type="email" formControlName="email">
+                                <div class="validation-messages" *ngIf="form.controls.email.errors">
+                                    <div *ngIf="form.controls.email.errors.required">
+                                        email is required.
+                                    </div>
+                                    <div *ngIf="form.controls.email.errors.minlength">
+                                        should be longer than 5 symbols.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="maritalStatus" class="col-md-3 col-sm-12 col-form-label required">Marital status</label>
+                            <div class="col-md-9 col-sm-12" [ngClass]="{ 'invalid': isFieldValid('maritalStatus') }">
+                                <input id="maritalStatus" class="form-control" type="maritalStatus" formControlName="maritalStatus">
+                                <div class="validation-messages" *ngIf="form.controls.maritalStatus.errors">
+                                    <div *ngIf="form.controls.maritalStatus.errors.required">
+                                        Marital status is required.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-column col-sm-6">
+                        <div class="form-group row">
+                            <label for="lastName" class="col-md-3 col-sm-12 col-form-label required">Last Name</label>
+                            <div class="col-md-9 col-sm-12" [ngClass]="{ 'invalid': isFieldValid('lastName') }">
+                                <input id="lastName" class="form-control" type="text" formControlName="lastName">
+                                <div class="validation-messages" *ngIf="form.controls.lastName.errors">
+                                    <div *ngIf="form.controls.lastName.errors.required">
+                                        last name is required.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="age" class="col-md-3 col-sm-12 col-form-label required">Age</label>
+                            <div class="col-md-9 col-sm-12" [ngClass]="{ 'invalid': isFieldValid('age') }">
+                                <input id="age" class="form-control" type="text" formControlName="age">
+                                <div class="validation-messages" *ngIf="form.controls.age.errors">
+                                    <div *ngIf="form.controls.age.errors.required">
+                                        age is required.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="birth" class="col-md-3 col-sm-12 col-form-label required">Birth Date</label>
+                            <div class="col-md-9 col-sm-12" [ngClass]="{ 'invalid': isFieldValid('birth') }">
+                                <div class="input-group">
+                                    <input class="form-control" placeholder="yyyy-mm-dd" formControlName="birth" ngbDatepicker #birthDatepicker="ngbDatepicker">
+                                    <button class="input-group-addon" (click)="birthDatepicker.toggle()" type="button">
+                                        <i class="fa fa-calendar" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                                <div class="validation-messages" *ngIf="form.controls.birth.errors">
+                                    <div *ngIf="form.controls.birth.errors.required">
+                                        Birth Date is required.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,10 @@
+<div class="toasters">
+    <div *ngFor="let message of messages$ | async" class="toast" [ngClass]="[message.type, message.state]">
+        <div class="toast-addon">
+            <i class="fa fa-check" aria-hidden="true"></i>
+        </div>
+        <div class="toast-content">
+            <span>{{ message.content }}</span>
+        </div>
+    </div>
+</div>

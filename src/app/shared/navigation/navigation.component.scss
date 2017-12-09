@@ -1,0 +1,76 @@
+$navigation-text-color: #343a40;
+
+.navigation {
+	background-color: white;
+	box-shadow: 0px 0px 2px black;
+	color: $navigation-text-color;
+}
+
+.navbar-nav {
+	color: $navigation-text-color;
+
+	.icon {
+		margin-right: 5px;
+		font-size: 19px;
+	}
+	
+	.nav-link:hover {
+		color: lighten($navigation-text-color, 15%);
+		cursor: pointer;
+	}
+}
+
+.navigation-icon {
+    display: flex;
+    align-items: center;
+}
+
+
+.loading {
+    position: absolute;
+    top: 50%;
+}
+
+.loading-bar {
+    margin-right: 5px;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #f1c40f;
+    animation: loading 1s ease-in-out infinite;
+}
+
+.loading-bar:nth-child(1) {
+    animation-delay: 0;
+}
+
+.loading-bar:nth-child(2) {
+    animation-delay: 0.09s;
+}
+
+.loading-bar:nth-child(3) {
+    animation-delay: .18s;
+}
+
+.loading-bar:nth-child(4) {
+    animation-delay: .27s;
+}
+
+.loading-bar:nth-child(5) {
+    animation-delay: .36s;
+}
+
+.loading-bar:nth-child(6) {
+    animation-delay: .45s;
+}
+
+
+@keyframes loading {
+    0% {
+        transform: scale(1.5, 1.5);
+    }
+    80% {
+        transform: scale(0);
+    }
+}

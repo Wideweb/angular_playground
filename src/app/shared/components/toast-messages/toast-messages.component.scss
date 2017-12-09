@@ -1,0 +1,41 @@
+$border-color-info: rgba(142, 176, 33, 1);
+$border-color-error: #ce312f;
+
+.toasters {
+    position: absolute;
+    z-index: 1001;
+    right: 0;
+    top: 0;
+}
+
+@mixin toast($color) {
+    display: flex;
+    line-height: 65px;
+    border: solid 1px $color;
+    width: 400px;
+    margin: 15px;
+
+    .toast-addon {
+        padding: 0 15px; 
+        background-color: $color; 
+        color: white
+    }
+    
+    .toast-content {
+        padding: 0 20px;
+    }
+}
+
+.toast {
+    .closing {
+        right: -50%;
+    }
+
+    &.toaster-info {
+        @include toast($border-color-info);
+    }
+
+    &.toaster-error {
+        @include toast($border-color-error);
+    }
+}

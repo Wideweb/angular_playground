@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-md navigation">
+    <a class="offset-md-2 navbar-brand text-primary" href="#">
+        <img src="/assets/images/logo.png" width="30" height="30" class="d-inline-block align-top" alt=""> MMO
+    </a>
+    <button class="navbar-toggler" type="button" aria-label="Toggle navigation" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed"
+        aria-controls="navigationMenu">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+    </button>
+    <div id="navigationMenu" class="collapse navbar-collapse col-12 col-md-auto px-sm-0" [ngbCollapse]="isCollapsed">
+        <app-lookup class="my-2 my-lg-0 col-md-8 col-sm-12 px-sm-0" [options]="lookupOptions" (lookup)="triggerLookup($event)"></app-lookup>
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item navigation-icon">
+                <a class="nav-link" [routerLink]="['/patient']">
+                    <i class="fa fa-plus icon" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li class="nav-item navigation-icon">
+                <a class="nav-link">
+                    <i class="fa fa-spinner fa-pulse fa-2x fa-fw" aria-hidden="true" [ngbPopover]="notificationPopoverContent" popoverTitle="Fancy content"
+                        placement="bottom" #notificationPopover="ngbPopover" (document:click)="notificationPopover.close()" (click)="$event.stopPropagation()"></i>
+                    <ng-template #notificationPopoverContent>
+                        <div class="loading">
+                            <div class="loading-bar"></div>
+                            <div class="loading-bar"></div>
+                            <div class="loading-bar"></div>
+                            <div class="loading-bar"></div>
+                            <div class="loading-bar"></div>
+                            <div class="loading-bar"></div>
+                        </div>
+                    </ng-template>
+                </a>
+            </li>
+        </ul>
+        <ul class="navbar-nav">
+            <li class="nav-item" *ngIf="!auth.isAuthenticated()">
+                <a class="nav-link" (click)="auth.loginRedirect()">
+                    <i class="fa fa-sign-in icon" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li class="nav-item" *ngIf="auth.isAuthenticated()">
+                <a class="nav-link" (click)="auth.logout()">
+                    <i class="fa fa-sign-out" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>

@@ -1,0 +1,37 @@
+@import "../../../assets/scss/_variables.scss";
+
+.header {
+	color: white;
+}
+
+.patient-form {
+    margin-bottom: 600px;
+}
+
+.patient-form-section {
+    margin-bottom: 50px;
+}
+
+.nav-link.active {
+    background-color: $primary;
+    color: white;
+}
+
+.patient-form-navigation {
+    background: #CCC;
+}
+
+.patient-form-navigation-sticked > .patient-form-navigation {
+	
+}
+
+.btn.btn-default::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: red yellow green blue;
+}

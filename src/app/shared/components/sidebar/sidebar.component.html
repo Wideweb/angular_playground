@@ -1,0 +1,25 @@
+<nav class="sidebar bg-dark" [ngClass]="{'active': active }">
+	<!-- Sidebar Header -->
+	<button type="button" class="btn toggle-btn navbar-btn" (click)="active = !active">
+		<i class="fa icon" aria-hidden="true" [ngClass]="active ? 'fa-chevron-left' : 'fa-chevron-right'"></i>
+	</button>
+
+	<!-- Sidebar Links -->
+	<ul class="list-unstyled menu">
+		<li class="menu-item" *ngFor="let item of menuItems" [ngClass]="{'collapsible': item.submenu, 'collapsed': item.isCollapsed}">
+			<a class="menu-item-link" (click)="navigateTo(item)" [ngClass]="{'active': isItemActive(item)}" (click)="item.isCollapsed = !item.isCollapsed">
+				<i class="fa {{ item.icon }} icon" aria-hidden="true"></i>
+				<span class="title">{{ item.title }}</span>
+			</a>
+
+			<ul class="list-unstyled menu" id="heroesSubmenu" *ngIf="item.submenu" [ngClass]="{'collapsed': item.isCollapsed}">
+				<li class="menu-item" *ngFor="let subItem of item.submenu">
+					<a class="menu-item-link" (click)="navigateTo(subItem)" [ngClass]="{'active': isItemActive(subItem)}">
+						<i class="fa {{ subItem.icon }} icon" aria-hidden="true"></i>
+						<span class="title">{{ subItem.title }}</span>
+					</a>
+				</li>
+			</ul>
+		</li>
+	</ul>
+</nav>

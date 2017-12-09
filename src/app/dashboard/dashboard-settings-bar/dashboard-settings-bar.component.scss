@@ -1,0 +1,28 @@
+@import "../../../assets/scss/_variables.scss";
+
+.dashboard-settings-bar {
+    height: 100%;
+    min-height: 100vh;
+    background-color: #EEE;
+
+    .nav-tabs .nav-link {
+        border-radius: 0px;
+    }
+
+    .nav-tabs .nav-link.active {
+        background-color: #EEE;
+        border-bottom-color: #EEE;
+    }
+
+    .nav.nav-tabs {
+        background-color: white;
+    } 
+}
+
+.selected-columns-container {
+    min-height: 100px;
+}
+
+.drag-disabled {
+    background-color: gray;
+}
